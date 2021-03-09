@@ -28,8 +28,8 @@ public class DownloadService {
     public ResponseEntity<Resource> file(
             String fileName,
             String name,
-            String  userId,
-            String  content
+            String userId,
+            String content
     )throws IOException {
 
         File file = new File("pdf/" + fileName);

@@ -41,19 +41,23 @@ public class HtmlMakerService {
         TemplateEngine templateEngine = new TemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
 
-        String[] parameterHtml = templateDataDB.getFormat_content().split(",");
+        String formatContent = templateDataDB.getFormat_content();
+        Context context = new Context();
 
-        Context context = ReplaceContent(contents,parameterHtml, templateDataDB.getImage());
+        if (formatContent != null && formatContent != ""){
+            String[] parameterHtml = formatContent.split(",");
+            context = ReplaceContent(context, contents,parameterHtml, templateDataDB.getImage());
+        }
 
         return templateEngine.process(templateDataDB.getTemplate_file(), context);
     }
 
     private Context ReplaceContent(
+            Context context,
             String[] contents,
             String[] parameterHtml,
             String imageFileName
     ){
-        Context context = new Context();
 
         for (int i = 0; i < contents.length; i++) {
             if (!contents[i].contains("_")){ //Check content with "_"

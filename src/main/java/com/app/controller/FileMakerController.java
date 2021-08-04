@@ -63,7 +63,7 @@ public class FileMakerController {
                 Template templateDataDB = templateRepo.findTemplate(Integer.parseInt(idTemplate));
                 if (templateDataDB == null ){ // Check Template in Database
                     logService.SaveFailed(name,userId,content,desc.paramsIdTemplateNotFound);
-                    return error.respone(desc.paramsIdTemplateNotFound);
+                        return error.respone(desc.paramsIdTemplateNotFound);
                 }else{
                     String[] contents = content.split("\\*");
                     this.descError = check.checkRequiredContent(fileType, contents, templateDataDB);

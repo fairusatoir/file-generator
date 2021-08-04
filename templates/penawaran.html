@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <style>
-
         body {
-            margin:0;
+            margin: 0;
         }
 
-        table, td {
+        table,
+        td {
             border: 0px hidden black;
         }
 
-        table{
+        table {
             display: inline;
         }
 
@@ -20,34 +21,34 @@
             line-height: 16pt;
         }
 
-        .margin-header{
+        .margin-header {
             padding-top: 25mm;
         }
 
-        .leftTable{
+        .leftTable {
             width: 1.5in;
         }
 
-        .bottomText{
+        .bottomText {
             padding-top: 0.5in;
             text-align: center;
         }
 
-        .space{
+        .space {
             height: 20px;
         }
 
         .content-page {
-            margin : 0px auto;
+            margin: 0px auto;
             width: auto;
         }
 
-        .page-size{
+        .page-size {
             font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
             text-align: left;
 
             border-collapse: collapse;
-            margin : 0px auto;
+            margin: 0px auto;
 
             width: 210mm;
             max-width: 210mm;
@@ -55,10 +56,10 @@
         }
 
         img {
-            position:absolute;
+            position: absolute;
             width: 170mm;
             height: auto;
-            z-index:-1;
+            z-index: -1;
         }
 
         @page {
@@ -68,10 +69,10 @@
         }
     </style>
 </head>
+
 <body>
     <div class="page-size">
-        <img th:src="${watermark}" src="image/pengajuan.png"
-             style=""/>
+        <img th:src="${watermark}" src="image/pengajuan.png" style="" />
         <div class="margin-header"></div>
         <table class="content-page">
             <tr>
@@ -79,7 +80,8 @@
             </tr>
             <tr>
                 <td colspan="3" style="padding-right: 50mm; text-align: justify">
-                    Permohonan KTA BNI Fleksi Anda BERHASIL dengan ketentuan sebagai berikut :
+                    Permohonan KTA BNI Fleksi Anda telah Kami SETUJUI dan diteruskan ke Kantor Cabang BNI dengan
+                    ketentuan sebagai berikut :
                 </td>
             </tr>
             <tr>
@@ -118,22 +120,26 @@
             </tr>
             <tr class="space"></tr>
             <tr>
-                <td colspan="3" style="padding-right: 50mm; text-align: justify">Permohonan kredit Anda telah diteruskan ke kantor Cabang BNI dan Anda akan dihubungi oleh Petugas Cabang BNI.
-                    Informasi ini berlaku selambat-lambatnya 30 hari kerja sejak diterbitkan. 
-                    Informasi lebih lanjut hubungi Kantor Cabang BNI sesuai domisili kerja Anda atau BNI Call 1500046.
+                <td colspan="3" style="padding-right: 50mm; text-align: justify">Pencairan 1 x 24 jam setelah
+                    menandatangani Perjanjian Kredit di Kantor Cabang BNI.<br></br>
+                    Selanjutnya Anda akan dihubungi oleh Petugas Cabang BNI. Persetujuan ini berlaku 30 hari kalender
+                    sejak diterbitkan.
+                    Untuk Informasi lebih lanjut hubungi BNI Call 1500046.
                 </td>
             </tr>
             <tr class="space"></tr>
             <tr>
-                <td colspan="3" style="padding-right: 50mm; text-align: justify">Resi ini merupakan bukti permohonan kredit oleh nasabah dan bukti
-                    permohonan kredit yang SAH dan mempunyai kekuatan hukum yang mengikat. <b>HARAP DISIMPAN</b>.</td>
+                <td colspan="3" style="padding-right: 50mm; text-align: justify">Resi ini merupakan bukti permohonan
+                    kredit oleh nasabah dan bukti persetujuan kredit yang SAH
+                    dan mempunyai kekuatan hukum yang mengikat. <b>HARAP DISIMPAN</b>.</td>
             </tr>
             <tr>
-                <td class="bottomText" colspan="3" style="padding-right: 120mm;">
+                <td class="bottomText" colspan="3" style="padding-right: 50mm;">
                     <i>&lt;This is computer generated receipt no signature required></i>
                 </td>
             </tr>
         </table>
     </div>
 </body>
+
 </html>

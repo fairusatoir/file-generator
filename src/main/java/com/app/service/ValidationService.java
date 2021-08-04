@@ -43,12 +43,16 @@ public class ValidationService {
         try {
             List<String> types = Arrays.asList(templateDataDB.getFile_type().split("\\*"));
 
-            if (contents.length != templateDataDB.getContent_sum()) { // Check the amount of content
-                return desc.paramsContentSize;
-            }else if(!types.contains(fileType)){ // File Type Available
-                return desc.paramsFileTypeNotFound;
-            }else if(!isNotNullContent(contents)){ // File Type Available
-                return desc.paramsContentFillNull;
+            if(templateDataDB.getContent_sum() != 0){
+                if (contents.length != templateDataDB.getContent_sum()) { // Check the amount of content
+                    return desc.paramsContentSize;
+                }else if(!types.contains(fileType)){ // File Type Available
+                    return desc.paramsFileTypeNotFound;
+                }else if(!isNotNullContent(contents)){ // File Type Available
+                    return desc.paramsContentFillNull;
+                }else{
+                    return "";
+                }
             }else{
                 return "";
             }
